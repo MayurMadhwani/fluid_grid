@@ -256,7 +256,7 @@ class _FluidGridState extends State<FluidGrid> {
 
   //abstracted widget to build a cell, can be used for both header and body cells
   Widget _buildCell({
-    required MapEntry<int, DataCellCustom> entry,
+    required MapEntry<int, FluidDataCell> entry,
     required int rowIndex,
     double? height,
   }) {
@@ -306,7 +306,7 @@ class FluidColumn {
 }
 
 class FluidRow {
-  final List<DataCellCustom> cells;
+  final List<FluidDataCell> cells;
   final double height;
   final Color? color;
 
@@ -317,14 +317,14 @@ class FluidRow {
   });
 }
 
-class DataCellCustom {
+class FluidDataCell {
   final Widget child;
   final bool expanded;
   final BoxDecoration? decoration;
   final AlignmentGeometry? alignment;
   final EdgeInsetsGeometry? padding;
 
-  const DataCellCustom({
+  const FluidDataCell({
     required this.child,
     this.expanded = false,
     this.decoration,
