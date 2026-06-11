@@ -1,4 +1,5 @@
 import 'package:example/grids/grid1.dart';
+import 'package:example/grids/grid2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,7 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               SizedBox(
                 width: double.infinity,
-                child: Wrap(children: [Grid1()]),
+                child: Wrap(
+                  spacing: 40,
+                  runSpacing: 40,
+                  children: [Grid1(), Grid2()],
+                ),
               ),
             ],
           ),
