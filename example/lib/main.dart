@@ -1,5 +1,6 @@
 import 'package:example/grids/grid1.dart';
 import 'package:example/grids/grid2.dart';
+import 'package:example/grids/grid3.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,19 +40,21 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: double.infinity,
-                child: Wrap(
-                  spacing: 40,
-                  runSpacing: 40,
-                  children: [Grid1(), Grid2()],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Wrap(
+                    spacing: 40,
+                    runSpacing: 40,
+                    children: [Grid1(), Grid2(), Grid3()],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
