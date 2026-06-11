@@ -2,6 +2,9 @@ name: fluid_grid
 description: A responsive Flutter data grid.
 version: 0.0.1
 
+repository: https://github.com/MayurMadhwani/fluid_grid
+
+
 environment:
   sdk: ">=3.7.0 <4.0.0"
   flutter: ">=3.29.0"
