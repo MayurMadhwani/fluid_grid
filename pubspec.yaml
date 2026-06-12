@@ -1,6 +1,6 @@
 name: fluid_grid
-description: A responsive Flutter data grid.
-version: 0.0.2
+description: A lightweight and responsive data grid for Flutter with adaptive layouts, custom cell rendering, and support for web, desktop, and mobile.
+version: 0.0.3
 
 repository: https://github.com/MayurMadhwani/fluid_grid
 
@@ -20,3 +20,20 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 flutter:
+
+topics:
+  - datagrid
+  - table
+  - responsive
+  - flutter-web
+  - desktop
+  - fluid-grid
+  - data-table
+  - adaptive-layout
+  - responsive-design
+  - custom-cell-rendering
+  - responsive-data-grid
+  - flutter-data-table
+  - flutter-responsive
+  - flutter-adaptive-layout
+  - responsive-data-table

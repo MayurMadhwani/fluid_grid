@@ -1,4 +1,4 @@
-Version: 0.0.1
+Version: 0.0.3
 
 
 Fluid grid is a responsive data table which can work seamlessly across the platforms.

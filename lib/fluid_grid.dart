@@ -1,7 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+/// Main widget for the FluidGrid, this is the entry point for using the FluidGrid in a Flutter application. It takes in various parameters to customize the appearance and behavior of the grid, such as header height, header color, border options, and the data to be displayed in the columns and rows.
 class FluidGrid extends StatefulWidget {
+
+  /// Constructor for the FluidGrid widget, this allows for creating instances of FluidGrid with the specified properties such as header height, header color, border options, decoration, columns, rows, scroll controller, and end reached callback
   const FluidGrid({
     super.key,
     this.headerHeight = _Constants.defaultCellHeight,
@@ -14,14 +17,23 @@ class FluidGrid extends StatefulWidget {
     this.onEndReached,
   });
 
+  /// The height of the header row, this allows for controlling the vertical spacing of the header row in the table, providing a way to create more compact or more spaced out layouts based on the content and design requirements
   final double headerHeight;
+  /// The color of the header row, this allows for styling options such as background color for the header row
   final Color? headerColor;
+  /// If true, a border will be drawn around the table and between the rows, this is useful for creating a more defined grid layout where the boundaries between cells are clearly visible
   final bool isBorderEnabled;
+  /// Custom decoration for the entire grid, this allows for styling options such as background color, borders, and shadows for the entire grid, providing more control over the overall appearance of the table
   final BoxDecoration? decoration;
+  /// The list of columns in the table, this allows for defining the structure and layout of the table's header, providing flexibility in how the header is displayed and styled
   final List<FluidColumn> columns;
+  /// The list of rows in the table, this allows for defining the content and layout of the table's body, providing flexibility in how the data is displayed and styled in each row
   final List<FluidRow> rows;
+  /// The list of rows in the table, this allows for defining the content and layout of the table's body, providing flexibility in how the data is displayed and styled in each row
   final ScrollController? scrollController;
+  /// Callback that is called when the user scrolls to the end of the table, this is useful for implementing infinite scrolling or loading more data when the user reaches the end of the table
   final VoidCallback? onEndReached;
+
   @override
   State<FluidGrid> createState() => _FluidGridState();
 }
@@ -287,15 +299,20 @@ class _FluidGridState extends State<FluidGrid> {
   }
 }
 
-// Custom classes to represent the structure of the DataTable
-
+/// Custom classes to represent the structure of the DataTable
 class FluidColumn {
+  /// The header label for the column, this is the text or widget that will be displayed in the header row of the table for this column
   final Widget label;
+  /// The width of the column, if null, the column will expand to fill the available space, this allows for flexible layouts where some columns can take up more space than others based on their content and design requirements
   final double? width;
+  /// Alignment of the column header, this allows for controlling the positioning of the header label within the column, such as centering it or aligning it to the left or right
   final AlignmentGeometry alignment;
+  /// Padding inside the column header, this allows for controlling the spacing between the header label and the edges of the column header cell, providing more control over the layout and appearance of the header
   final EdgeInsetsGeometry? padding;
+  /// Custom decoration for the column header, this allows for styling options such as background color, borders, and shadows on a per-column basis
   final BoxDecoration? decoration;
 
+  /// Constructor for the FluidColumn class, this allows for creating instances of FluidColumn with the specified properties such as label, width, alignment, padding, and decoration
   const FluidColumn({
     required this.label,
     this.width,
@@ -305,11 +322,15 @@ class FluidColumn {
   }) : super();
 }
 
+/// Custom class to represent a row in the DataTable, this allows for more customization options for each row, such as height, color, and the list of cells in the row
 class FluidRow {
+  /// The list of cells in the row, this allows for defining the content and layout of each cell in the row, providing flexibility in how the data is displayed in each row of the table
   final List<FluidDataCell> cells;
+  /// The height of the row, this allows for controlling the vertical spacing of the rows in the table, providing a way to create more compact or more spaced out layouts based on the content and design requirements
   final double height;
+  /// The color of the row, this allows for styling options such as background color on a per-row basis
   final Color? color;
-
+  /// Constructor for the FluidRow class, this allows for creating instances of FluidRow with the specified properties such as cells, height, and color
   const FluidRow({
     required this.cells,
     this.height = _Constants.defaultCellHeight,
@@ -317,16 +338,24 @@ class FluidRow {
   });
 }
 
+/// Custom class to represent a cell in the DataTable, this allows for more customization options for each cell, such as expanding to fill available space, custom decoration, alignment, and padding
 class FluidDataCell {
+  /// The content of the cell, this can be any widget, allowing for a wide range of customization options for the cell's content
   final Widget child;
+  /// If true, the cell will expand to fill the available space in the column, this is useful for creating flexible layouts where some cells can take up more space than others based on their content
   final bool expanded;
+  /// Custom decoration for the cell, this allows for styling options such as background color, borders, and shadows on a per-cell basis
   final BoxDecoration? decoration;
+  /// Alignment of the cell's content, this allows for controlling the positioning of the content within the cell, such as centering it or aligning it to the left or right
   final AlignmentGeometry? alignment;
+  /// Padding inside the cell, this allows for controlling the spacing between the cell's content and its borders, providing more control over the layout and appearance of the cell
   final EdgeInsetsGeometry? padding;
 
+
+  /// Constructor for the FluidDataCell class, this allows for creating instances of FluidDataCell with the specified properties such as child, expanded, decoration, alignment, and padding
   const FluidDataCell({
     required this.child,
-    this.expanded = false,
+    this.expanded = false,// By default, cells do not expand to fill available space, this allows for a more compact layout where cells only take up as much space as their content requires unless explicitly set to expand
     this.decoration,
     this.alignment,
     this.padding,
