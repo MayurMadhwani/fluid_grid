@@ -23,17 +23,7 @@ flutter:
 
 topics:
   - datagrid
-  - table
-  - responsive
-  - flutter-web
-  - desktop
-  - fluid-grid
   - data-table
-  - adaptive-layout
-  - responsive-design
-  - custom-cell-rendering
-  - responsive-data-grid
-  - flutter-data-table
-  - flutter-responsive
-  - flutter-adaptive-layout
-  - responsive-data-table
+  - responsive
+  - flutter-web-android-ios-desktop
+  - lightweight
