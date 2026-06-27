@@ -22,7 +22,7 @@ A lightweight, responsive, and customizable data grid for Flutter, built to deli
 
 ```yaml
 dependencies:
-  fluid_grid: ^0.0.3
+  fluid_grid: ^0.0.4
 ```
 
 Then run:

@@ -5,3 +5,7 @@ Added a lightweight and responsive data grid for Flutter.
 Added adaptive layouts for mobile, tablet, desktop, and web.
 Added support for custom column definitions and cell rendering.
 Included example application.
+
+## 0.0.4
+- Updated README documentation.
+- Added package preview images.
